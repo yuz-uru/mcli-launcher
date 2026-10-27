@@ -36,12 +36,11 @@ public class HelpCommands {
 					       )
 			), new Cmd(
 					"launch", "", "game", "启动游戏（PCL 版本隔离：工作目录 = versions/<id>/）",
-					"launch <版本id> [--allow-mp] [--xmx <内存>] [--width <宽> --height <高>] [--java <路径>] [--dry-run] " +
+					"launch <版本id> [--xmx <内存>] [--width <宽> --height <高>] [--java <路径>] [--dry-run] " +
 					"[--force]", List.of(
 					new Opt("--xmx <内存>", "最大堆内存（默认 2G）"),
 					new Opt("--width <宽> --height <高>", "窗口分辨率（两者需同时提供）"),
 					new Opt("--java <路径>", "指定 Java 可执行文件（默认自动探测）"),
-					new Opt("--allow-mp", "启用多人联机（默认禁用；优先级：本参数 > launcher.toml allowMultiplayer）"),
 					new Opt("--dry-run", "仅打印启动命令，不实际登录 / 启动"),
 					new Opt("--force", "跳过同版本实例锁（同一版本已在运行时默认拒绝启动）")
 					                    )
