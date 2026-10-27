@@ -1,0 +1,17 @@
+spring:
+  main:
+    web-application-type: none
+    banner-mode: off
+    log-startup-info: false
+  shell:
+    command:
+      help:
+        enabled: false
+    interactive:
+      enabled: true
+    history:
+      name: "${mcli.root:.}/log/shell-history.log"
+logging:
+  level:
+    org.springframework: warn
+    org.jline: warn

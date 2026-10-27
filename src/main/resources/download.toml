@@ -1,0 +1,28 @@
+# 下载配置（打包进 jar，运行时从 classpath 读取）
+# 用户级覆盖：在 launcher.toml 的 [launcher] 里设置 source / threads（外部优先，无需重新打包）
+# 内置默认：切换国内镜像把 source 改为 "bmclapi"
+
+[download]
+threads = 16                # 并发下载线程数
+retries = 3                 # 单文件失败重试次数
+source = "official"         # official | bmclapi
+manifestCacheMinutes = 60   # 版本清单本地缓存时长（分钟）
+bigFileThresholdMB = 8      # 超过此大小的大文件启用分段并行下载
+bigFileSegments = 4         # 大文件分段数（服务器需支持 Range）
+failover = true             # 主源失败后自动切换另一下载源（official <-> bmclapi）
+
+# Mojang 官方源
+[sources.official]
+manifest = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
+libraries = "https://libraries.minecraft.net/"
+resources = "https://resources.download.minecraft.net/"
+rewriteHosts = []
+mirrorHost = ""
+
+# BMCLAPI 镜像（国内加速）
+[sources.bmclapi]
+manifest = "https://bmclapi2.bangbang93.com/mc/game/version_manifest_v2.json"
+libraries = "https://bmclapi2.bangbang93.com/maven/"
+resources = "https://bmclapi2.bangbang93.com/assets/"
+rewriteHosts = ["piston-meta.mojang.com", "piston-data.mojang.com", "launcher.mojang.com"]
+mirrorHost = "https://bmclapi2.bangbang93.com"

@@ -1,0 +1,14 @@
+# 启动器配置文件（工作目录，用户可编辑；改这里不需要重新打包）
+# 这里设置的值优先于打包内置的 download.toml（source / threads）
+
+[launcher]
+allowMultiplayer = false   # 是否启用多人联机（false = 禁用联机按钮；--allow-mp 参数优先）
+# gameDir = ".minecraft"   # Minecraft 根目录（版本隔离：versions/<id>/ 独立，libraries/assets 共享）
+# javaPath = ""            # 游戏用 java（留空 = 自动：--java > 本项 > 当前 JVM）
+# xmx = "2G"               # 游戏最大堆内存（--xmx 优先）
+# threads = 16             # 下载并发线程数（覆盖内置 download.toml）
+# source = "official"      # 下载源：official | bmclapi（国内加速填 bmclapi）
+
+[account]
+# offlineName = "Player"          # 联机禁用 / dry-run 时的离线用户名（同机器多人单机时区分存档）
+# cache = "data/usercache.json"   # 登录会话缓存路径
